@@ -1,626 +1,227 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parthadeb Mondal - Software Engineer</title>
-    <style>
-        /* Inter Font from Goole Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-        /* VARIABLES */
-        :root {
-            --accent-color: #47ebeb;
-            --background-color: #2a2a31;
-            --text-color: #fff;
-            --text-color-muted: #b9b9b9;
-
-            /* spacing */
-            --space-xs: 4px;
-            --space-sm: 8px;
-            --space-md: 16px;
-            --space-lg: 32px;
-            --space-xl: 64px;
-            --space-xxl: 128px;
-
-            /* typography */
-            --font-size-xs: 14px;
-            --font-size-sm: 16px;
-            --font-size-md: 18px;
-            --font-size-lg: 24px;
-            --font-size-xl: 28px;
-            --font-size-xxl: 88px;
-        }
-
-        body {
-            background-color: var(--background-color);
-            font-family: Inter, Arial, sans-serif;
-            margin: 0;
-            padding: 0 20px;
-            color: var(--text-color);
-        }
-
-        #page {
-            display: flex;
-            flex-direction: column;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding-top: var(--space-md);
-        }
-
-        /* LOGO AND NAVIGATION */
-
-        header {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        nav {
-
-            margin-left: auto;
-        }
-
-        .logo {
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-
-        }
-
-        nav ul {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-            margin: 0;
-        }
-
-        nav ul li a:link,
-        nav ul li a:visited {
-            color: var(--text-color);
-            opacity: 0.7;
-        }
-
-        /* TYPOGRAPHY */
-
-        a:link,
-        a:visited {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        h1 {
-            font-size: var(--font-size-xxl);
-            margin-bottom: var(--space-sm);
-        }
-
-        h2 {
-            font-size: var(--font-size-xl);
-            color: var(--accent-color);
-            margin-bottom: var(--space-lg);
-            font-weight: 200;
-            margin-top: var(--space-xl);
-        }
-
-        h3 {
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--space-sm);
-            font-weight: 400;
-        }
-
-        p {
-            font-size: var(--font-size-sm);
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--text-color-muted);
-            margin-bottom: var(--space-md);
-
-        }
-
-        /* SECTIONS  */
-
-        #about {
-            margin-top: var(--space-xxl);
-        }
-
-        #about h1 {
-            font-size: var(--font-size-xxl);
-            margin-bottom: var(--space-sm);
-        }
-
-        #about p {
-            font-size: var(--font-size-xl);
-            font-weight: 200;
-            line-height: 1.4;
-            color: var(--text-color);
-        }
-
-        section {
-            margin-top: var(--space-xxl);
-            margin-bottom: var(--space-xxl);
-        }
-
-        .card {
-            background: linear-gradient(90deg, #35353f 0%, #3d3b3e 50%, #3d3b3e 50%);
-            border-radius: 20px;
-            padding: var(--space-xs) var(--space-lg) var(--space-lg);
-            border: 0.5px solid #484851;
-            margin-bottom: var(--space-lg);
-        }
-
-        .card p {
-            margin: var(--space-xs) 0;
-            font-size: var(--font-size-xs);
-        }
-
-        /* SKILLS */
-
-        #skills p {
-            line-height: 1.8;
-        }
-
-        /* EXPERIENCE */
-
-        #experience .job p.role {
-            font-size: var(--font-size-md);
-        }
-
-        /* RECENT WORK */
-
-        .project {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-            grid-template-rows: 1fr 3fr;
-            column-gap: var(--space-lg);
-            padding: var(--space-md) var(--space-lg);
-        }
-
-        .project .thumbnail {
-            grid-row: span 2;
-        }
-
-        .project img {
-            width: 100%;
-            margin-top: var(--space-md);
-            border-radius: 14px;
-        }
-
-        .project p a {
-            display: block;
-            margin-top: var(--space-md);
-        }
-
-        /* CONTACT  */
-
-        #contact {
-            text-align: center;
-        }
-
-        #contact p {
-            font-size: var(--font-size-lg);
-            font-weight: 200;
-            line-height: 1.4;
-            color: var(--text-color);
-        }
-
-
-        /* FOOTER */
-
-        footer {
-            margin-top: var(--space-xl);
-            padding: 0 0 var(--space-lg);
-            color: var(--text-color-muted);
-            text-align: center;
-        }
-
-        footer .social {
-            display: flex;
-            gap: var(--space-lg);
-            margin-bottom: var(--space-lg);
-            justify-content: center;
-            align-items: center;
-        }
-
-        footer .social a:hover svg {
-            fill: var(--accent-color);
-        }
-
-
-        /* MEDIA QUERIES */
-
-        @media screen and (max-width: 600px) {
-            :root {
-                --primary-color: #f9a826;
-                --secondary-color: #f9a826;
-                --accent-color: #47ebeb;
-                --background-color: #2a2a31;
-                --text-color: #fff;
-                --text-color-muted: #b9b9b9;
-
-                /* spacing */
-                --space-xs: 4px;
-                --space-sm: 8px;
-                --space-md: 16px;
-                --space-lg: 32px;
-                --space-xl: 64px;
-                --space-xxl: 128px;
-
-                /* typography */
-                --font-size-xs: 14px;
-                --font-size-sm: 16px;
-                --font-size-md: 18px;
-                --font-size-lg: 20px;
-                --font-size-xl: 24px;
-                --font-size-xxl: 48px;
-            }
-
-            header {
-                align-items: flex-start;
-            }
-
-            .logo {
-                font-size: var(--font-size-xl);
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 14px;
-                list-style: none;
-                align-items: flex-end;
-            }
-
-            section {
-                margin-top: var(--space-xl);
-                margin-bottom: var(--space-lg);
-            }
-
-            h2 {
-                margin-top: var(--space-lg);
-            }
-
-            .project {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div id="page">
-
-        <header>
-            <div class="logo">
-                <a href="/">WebcoderPartha.</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#portfolio">Recent Work</a></li>
-                    <li><a href="https://drive.google.com/file/d/1-X-J1mFOxP4jWgzuF5OfcYyceIkAM5BA/view?usp=sharing" target="_blank">My Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <div id="about">
-                <h1>
-                    Hi, I'm Parthadeb Mondal.
-                </h1>
-                <p>
-                    Motivated and detail-oriented Software Engineer with a strong foundation in designing, developing, and maintaining scalable software solutions. Eager to contribute expertise in full-stack development to create innovative and user-centric applications. Aspiring to leverage skills in problem-solving, teamwork, and cutting-edge technologies to drive impactful results in a dynamic and growth-oriented organization at <a href="#job">One Digital BD</a>.
-                </p>
-            </div>
-
-            <section id="skills">
-                <h2>Skills</h2>
-            
-                <div class="skill card">
-                    <h3>
-                        Front-End Development
-                    </h3>
-                    <p>
-                        Frontend Developer with expertise in building responsive, user-friendly web applications using HTML, CSS, and JavaScript. Experienced in modern frameworks like Vue.js, Nuxt Js, with a strong focus on optimizing performance, ensuring cross-browser compatibility, and implementing seamless user experiences. Skilled in using version control systems (Git) and collaborating on fast-paced, agile development teams. Passionate about creating clean, maintainable code and delivering high-quality, accessible web interfaces.
-                    </p>
-                </div>
-
-                <div class="skill card">
-                    <h3>
-                        Back-End Development
-                    </h3>
-                    <p>
-                        &bull; Software Development <br>
-                        &bull; Web Development <br>
-                        &bull; Web Application Development <br>
-                        &bull; Custom Software Development <br>
-                        &bull; Familiar with Git Workflow, Docker and CI/CD
-                        <br>
-                        &bull; Experience with MySQL, PostgreSQL databse setup and management
-                        <br>
-                        &bull; Building RESTful APIs
-                    </p>
-                </div>
-
-                <div class="skill card">
-                    <h3>
-                        Server Management
-                    </h3>
-                    <p>
-                        &bull; VPS - Virtual Private Server
-                        <br>
-                        &bull; Cloud Server.
-                        <br>
-                        &bull; cPanel / WHM,
-                        <br>
-                        &bull; Digital Ocean.
-                    </p>
-                </div>
-
-                <div class="skill card">
-                    <h3>
-                        Tools
-                    </h3>
-                    <p>
-                        &bull; Familiar with Photoshop, Illustrator
-                        <br>
-                        &bull; Analytics Plarforms like Mailchimp , Google
-                        Analytics.
-                        <br>
-                        &bull; Project Management through Trello  , Slack ,
-                        Jira.
-                        <br>
-                        &bull; Coding Editor: PHPStorm, VS Code Studio, Notepad++, SublimeText.
-                    </p>
-                </div>
-            </section>
-
-            <section id="experience">
-                <h2>Experience</h2>
-                <div class="job card">
-                    <h3 id="job">One Digital BD</h3>
-                    <p class="role">Sr. Software Engineer</p>
-                    <p class="timeline">2024 to present</p>
-                    <p class="responsibilities">
-                        Working as a Full Stack Software Engineer at One Digital BD, responsible for developing and maintaining web applications using Laravel for backend development, Nuxt.js for frontend development, and MySQL for database management. Ensured the performance, security, and scalability of applications, while optimizing the deployment and maintenance of cloud server infrastructure. Collaborated with cross-functional teams to deliver high-quality software solutions, improving both user experience and system efficiency.
-                    </p>
-                </div>
-                <div class="job card">
-                    <h3>Dhaka Prokash Ltd</h3>
-                    <p class="role">Software Engineer</p>
-                    <p class="timeline">
-                        2023 - 2024
-                    </p>
-                    <p class="responsibilities">
-                        Worked as a Software Engineer at Dhaka Prokash Ltd, utilizing Laravel for backend development, Nuxt.js for server-side rendering, and Vue.js for building dynamic user interfaces. Integrated MySQL for database management and Prisma for efficient database queries. Designed responsive and modern front-end components using Tailwind CSS and JavaScript. Maintained and optimized VPS server infrastructure, ensuring high availability, security, and smooth application performance. Collaborated with cross-functional teams to deliver reliable and scalable software solutions.
-                    </p>
-                </div>
-                <div class="job card">
-                    <h3>Digitosys Ltd</h3>
-                    <p class="role">Laravel Developer</p>
-                    <p class="timeline">
-                        2022 - 2023
-                    </p>
-                    <p class="responsibilities">
-                        Worked at Digitosys Ltd as a Backend Developer, specializing in the development of inventory software, POS software, and loan management software using Laravel. Designed and implemented robust backend systems for efficient inventory tracking, point-of-sale transactions, and loan management processes. Focused on optimizing database structures, ensuring data integrity, and enhancing system performance. Collaborated with front-end teams to integrate smooth, user-friendly interfaces and ensured the scalability and security of the backend systems.
-                    </p>
-                </div>
-                <div class="education">
-                    <h2>Education</h2>
-
-                    <div class="school card">
-                        <h3>Dhaka Polytechnic Institute</h3>
-                        <p class="degree">Diploma in Computer Engineering</p>
-                        <p class="timeline">2015-2024</p>
-                    </div>
-
-                    <div class="school card">
-                        <h3>Cantonment Board High School, Mirpur</h3>
-                        <p class="degree">Business Studies</p>
-                        <p class="timeline">2015</p>
-                    </div>
-
-
-                </div>
-            </section>
-            <section id="portfolio">
-                <h2>Recent Work</h2>
-                <div class="project card">
-                    <div class="thumbnail"><a href="https://ums.szamantech.com" target="_blank"><img
-                                src="ums.png"
-                                alt="Project 1"></a></div>
-                    <h3>Union Management System (UMS) Software</h3>
-                    <p>
-                        Developed a comprehensive Union Management System using Laravel, Bootstrap, JavaScript, MySQL, and Job Queue. Designed and implemented key features such as user authentication, member management, and event scheduling. Utilized Bootstrap for a responsive, user-friendly interface and JavaScript for dynamic, interactive features. Built a robust backend using Laravel and MySQL, ensuring smooth data management and real-time updates. Integrated Job Queue to handle background tasks like notifications and report generation, enhancing system efficiency and performance.<br>
-                        <a href="https://ums.szamantech.com" target="_blank">Project Link</a>
-                    </p>
-                </div>
-
-                <div class="project card">
-                    <div class="thumbnail"><a href="https://www.dhakaprokash24.com" target="_blank"><img
-                                src="dhakaprokash.png"
-                                alt="Project 1"></a></div>
-                    <h3>Dhaka Prokash News portal</h3>
-                    <p>
-                        Developed and launched the Dhaka Prokash 24 website, a leading online news portal providing real-time updates on local and global events. Responsible for designing and implementing a responsive, visually appealing user interface using HTML, CSS, and JavaScript. Integrated dynamic content delivery, ensuring smooth functionality across various devices and browsers. Optimized website performance, focusing on fast loading speeds and seamless user experiences. Collaborated with backend developers to integrate news content, interactive features, and user engagement tools. Emphasized accessibility and cross-platform compatibility to reach a broad audience.<br>
-                        <a href="https://www.dhakaprokash24.com" target="_blank">Project Link</a>
-                    </p>
-                </div>
-                <div class="project card">
-                    <div class="thumbnail"><a href="https://szamantech.com" target="_blank"><img
-                                src="szamantech.png"
-                                alt="Project 2"></a></div>
-                    <h3>Szaman Tech</h3>
-                    <p>
-                        Built and developed the Szaman Tech website using Laravel, focusing on creating a robust and scalable backend. Implemented key features like user authentication, dynamic content management, and seamless integration with front-end technologies. Optimized the website for performance, ensuring fast load times and a smooth user experience. Developed secure and efficient database structures, and collaborated with design teams to deliver a modern, responsive website. Maintained a clean, maintainable codebase while ensuring cross-browser compatibility and high accessibility standards.
-                        <br>
-                        <a href="https://szamantech.com" target="_blank">Project Link</a>
-                    </p>
-                </div>
-                <div class="project card">
-                    <div class="thumbnail">
-                        <a href="https://notundesh24.com" target="_blank"><img
-                                src="notundesh24.png"
-                                alt="Project 3"></a>
-                    </div>
-                    <h3>Notundesh 24 Newsportal</h3>
-                    <p>
-                        Developed the NotunDesh 24 news portal using Laravel, focusing on delivering real-time news updates with a dynamic, user-friendly interface. Implemented features such as user authentication, content management, and article publishing. Optimized for performance and mobile responsiveness, ensuring fast load times and a seamless browsing experience across all devices. Integrated with backend services for content management, and ensured high standards of security, accessibility, and cross-browser compatibility.<br>
-                        <a href="https://notundesh24.com" target="_blank">Project Link</a>
-                    </p>
-                </div>
-                <div class="project card">
-                    <div class="thumbnail">
-                        <a href="https://szamanshop.online" target="_blank"><img
-                                src="szamanshop.png"
-                                alt="Project 3"></a>
-                    </div>
-                    <h3>Ecommerce Website</h3>
-                    <p>
-                        Developed and launched a fully functional eCommerce website using Laravel, Tailwind CSS, and JavaScript. Built dynamic product catalogs, integrated payment gateways, and implemented secure user authentication and shopping cart functionality. Designed a responsive, modern UI with Tailwind CSS, ensuring a seamless experience across all devices. Leveraged JavaScript for interactive features like product filtering and real-time updates. Optimized the website for performance, security, and user experience, ensuring fast load times and smooth transactions.<br>
-                        <a href="https://szamanshop.online" target="_blank">Project Link</a>
-                    </p>
-                </div>
-                <div class="project card">
-                    <div class="thumbnail">
-                        <a href="https://lalsobuj24.com" target="_blank"><img
-                                src="lalsobuj.png"
-                                alt="Project 3"></a>
-                    </div>
-                    <h3>Lalsobuj Newsportal</h3>
-                    <p>
-                        Built and developed Lalsobuj 24, an engaging and responsive news portal, using WordPress. Implemented custom themes and plugins to enhance functionality, ensuring a seamless user experience across all devices. Integrated dynamic content management features, allowing easy article publishing and updates. Optimized the website for performance, security, and SEO, ensuring fast loading times and high search engine visibility. Focused on providing an intuitive, accessible interface for users, while ensuring the website's scalability and responsiveness.<br>
-                        <a href="https://lalsobuj24.com" target="_blank">Project Link</a>
-                    </p>
-                </div>
-            </section>
-            <section id="contact">
-                <h2>Get in Touch</h2>
-                <p>
-                    If you have a project that you'd like to discuss, please get in touch with me at +8801726739276 | <a
-                        href="mailto:parthadev76@gmail.com">parthadev76@gmail.com</a>.
-                </p>
-            </section>
-
-
-        </main>
-
-        <footer>
-            <div class="social">
-                <!-- TWITTER -->
-                <!-- <a href="https://twitter.com/username" target="_blank">
-                    <svg fill="#FFFFFF" height="40px" width="40px" version="1.1" id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 310 310" xml:space="preserve">
-                        <g id="XMLID_826_">
-                            <path id="XMLID_827_" d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73
-    c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783
-    c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598
-    C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467
-    c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977
-    c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889
-    c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597
-    c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961
-    c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895
-    c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367
-    c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998
-    C307.394,57.037,305.009,56.486,302.973,57.388z" />
-                        </g>
-                    </svg>
-                </a> -->
-                <!-- LINKEDIN -->
-                <a href="https://www.linkedin.com/in/webcoderpartha" target="_blank">
-                    <svg fill="#FFFFFF" height="40px" width="40px" version="1.1" id="Icons"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 32 32" xml:space="preserve">
-                        <path d="M23,0H9C4,0,0,4,0,9v14c0,5,4,9,9,9h14c5,0,9-4,9-9V9C32,4,28,0,23,0z M12,25c0,0.6-0.4,1-1,1H7c-0.6,0-1-0.4-1-1V13
-                   c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1V25z M9,11c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S10.7,11,9,11z M26,25c0,0.6-0.4,1-1,1h-3
-                   c-0.6,0-1-0.4-1-1v-3.5v-1v-2c0-0.8-0.7-1.5-1.5-1.5S18,17.7,18,18.5v2v1V25c0,0.6-0.4,1-1,1h-3c-0.6,0-1-0.4-1-1V13
-                   c0-0.6,0.4-1,1-1h4c0.3,0,0.5,0.1,0.7,0.3c0.6-0.2,1.2-0.3,1.8-0.3c3,0,5.5,2.5,5.5,5.5V25z" />
-                    </svg></a>
-                <!-- DRIBBBLE -->
-                <!-- <a href="https://dribbble.com/username" target="_blank">
-                    <svg fill="#FFFFFF" width="40px" height="40px" viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg">
-
-                        <title />
-
-                        <g id="Dribble">
-
-                            <path
-                                d="M26.39,30H5.6a3.32,3.32,0,0,1-2.45-1,3.38,3.38,0,0,1-1-2.48V5.5A3.37,3.37,0,0,1,3.15,3,3.32,3.32,0,0,1,5.6,2H26.39a3.32,3.32,0,0,1,2.46,1,3.37,3.37,0,0,1,1,2.47v21a3.38,3.38,0,0,1-1,2.48A3.32,3.32,0,0,1,26.39,30ZM25,15.37a9.15,9.15,0,0,0-8.57-8.66H15.36a9.16,9.16,0,0,0-8.53,8.62v1.11q1,7.65,8.53,8.6h1.09A9.14,9.14,0,0,0,25,16.44ZM10.15,21.1a7.49,7.49,0,0,1-2-5.3v-.14a26.77,26.77,0,0,0,7.77-1.1H16a5.59,5.59,0,0,0,.75,1.3A12,12,0,0,0,10.15,21.1Zm5.31-7.83a25.58,25.58,0,0,1-7.12,1,7.67,7.67,0,0,1,4.22-5.44A46.7,46.7,0,0,1,15.46,13.27Zm3.47,9.79a7.39,7.39,0,0,1-3.47,1,5.91,5.91,0,0,1-4.3-2,10.84,10.84,0,0,1,6.07-4.84A28.62,28.62,0,0,1,18.93,23.06ZM17,12.84q-.93-1.69-2.87-4.58A8,8,0,0,1,16.18,8,6.77,6.77,0,0,1,21,10,8.85,8.85,0,0,1,17,12.84Zm6.67,3a18.35,18.35,0,0,0-3.57-.37,11.68,11.68,0,0,0-1.81.13c-.06-.17-.18-.44-.35-.79a5.75,5.75,0,0,1-.34-.77,10.24,10.24,0,0,0,4.3-3.06A7.64,7.64,0,0,1,23.66,15.8Zm-3.41,6.57a44.64,44.64,0,0,0-1.49-5.57,12.69,12.69,0,0,1,1.81-.14,9.42,9.42,0,0,1,3,.48A7.65,7.65,0,0,1,20.25,22.37Z" />
-
-                        </g>
-
-                    </svg>
-                </a> -->
-                <!-- GITHUB -->
-                <a href="https://github.com/WebcoderPartha" target="_blank">
-                    <svg width="40px" height="40px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF">
-                        <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
-                            <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)">
-                                <g id="icons" transform="translate(56.000000, 160.000000)">
-                                    <path
-                                        d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                                        id="github-[#142]">
-
-                                    </path>
-                                </g>
-                            </g>
-                        </g>
-                    </svg></a>
-                <!-- BEHANCE -->
-                <!-- <a href="behance" target="_blank">
-                    <svg fill="#FFFFFF" height="40px" width="40px" version="1.1" id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 512 512" xml:space="preserve">
-                        <g>
-                            <path d="M344.1,244.5c-4.9-4.2-11-6.3-18.2-6.3c-7.8,0-13.9,2.2-18.3,6.7c-4.3,4.5-7,10.5-8.2,18.1h52.7
-    C351.7,254.9,348.9,248.8,344.1,244.5z" />
-                            <path d="M214.3,266.1c-3.8-1.7-9-2.6-15.8-2.7h-39v42.2H198c6.9,0,12.2-0.9,16-2.8c7-3.5,10.4-10,10.4-19.7
-    C224.4,274.9,221,269.2,214.3,266.1z" />
-                            <path d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M291.6,182.3h67.8V202h-67.8
-    L291.6,182.3L291.6,182.3z M250.7,310.6c-3,4.9-6.7,9.1-11.2,12.4c-5,3.9-11,6.5-17.9,8c-6.9,1.4-14.3,2.1-22.4,2.1H128V174.9h76.5
-    c19.3,0.3,33,5.9,41,16.9c4.8,6.7,7.2,14.8,7.2,24.2c0,9.6-2.4,17.4-7.3,23.3c-2.7,3.3-6.8,6.3-12.1,9c8.1,3,14.2,7.6,18.3,14
-    s6.2,14.1,6.2,23.2C257.8,294.7,255.4,303.1,250.7,310.6z M384,283.2h-85.2c0.5,11.7,4.5,20,12.2,24.7c4.7,2.9,10.3,4.4,16.9,4.4
-    c6.9,0,12.6-1.8,17-5.4c2.4-1.9,4.5-4.6,6.3-8.1h31.2c-0.8,6.9-4.6,14-11.3,21.2c-10.5,11.4-25.1,17.1-44,17.1
-    c-15.6,0-29.3-4.8-41.2-14.4c-11.9-9.6-17.9-25.2-17.9-46.8c0-20.3,5.4-35.8,16.1-46.6c10.8-10.8,24.7-16.2,41.8-16.2
-    c10.2,0,19.4,1.8,27.5,5.5c8.2,3.6,14.9,9.4,20.2,17.3c4.8,6.9,7.9,15,9.3,24.2C383.8,265.4,384.1,273.1,384,283.2z" />
-                            <path d="M214.8,233.3c4.3-2.6,6.4-7.3,6.4-13.9c0-7.4-2.8-12.2-8.5-14.6c-4.9-1.6-11.1-2.5-18.7-2.5h-34.4v34.9H198
-    C204.9,237.3,210.4,236,214.8,233.3z" />
-                        </g>
-                    </svg>
-                </a> -->
-            </div>
-            <p>
-                &copy; 2025 WebcoderPartha. All rights reserved.
-            </p>
-            <!-- <p>
-                <a href="https://github.com/ayushsaranGithuB/one-page-portfolios/tree/main">Get this Free! One-Page
-                    Portfolio Template</a>
-            </p> -->
-        </footer>
-    </div>
-    <script>
-        // Catch all the # links from the nav and make them scroll smoothly to their destinations
-        const navLinks = document.querySelectorAll("nav ul li a");
-
-        // loop through the links and set an onclick event to send the user to the correct section in a smooth scroll
-        navLinks.forEach((link) => {
-            link.onclick = (e) => {
-                const href = link.getAttribute("href");
-
-                // Check if the href starts with # (internal link), else allow normal behavior
-                if (href.startsWith("#")) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: "smooth" });
-                    }
-                }
-            };
-        });
+<!doctype html>
+<html>
+  <head>
+    <title>New Flashier Nannon Website</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nannon is a fast game which feels like Backgammon but plays in a minute">
+    <meta name="keywords" content="backgammon,poker,gambling,nannon,casual game,table game,shesh pesh,tavli,acey deucey,game of ur,parcheesi,altoids game">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script language="JavaScript">
+
+    function MM_findObj(n, d) { //v3.0
+    var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+        d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+    if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+    for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+    }
+    /* Functions that swaps images. */
+    function MM_swapImage() { //v3.0
+    var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+    }
+    function MM_swapImgRestore() { //v3.0
+    var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+    }
+
+    /* Functions that handle preload. */
+    function MM_preloadImages() { //v3.0
+    var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+    }
+    var Today=new Date();
+    var ThisDay=Today.getDay();
+    var ThisDate=Today.getDate();
+    var ThisMonth=Today.getMonth()+1;
+    var ThisYear=Today.getFullYear();  //included if you wish to insert the year
+    function DayTxt (DayNumber) {
+    var Day=new Array();
+    Day[0]="Sunday";
+    Day[1]="Monday";
+    Day[2]="Tuesday";
+    Day[3]="Wednesday";
+    Day[4]="Thursday";
+    Day[5]="Friday";
+    Day[6]="Saturday";
+    return Day[DayNumber];
+    }
+    var DayName=DayTxt(ThisDay);
+    function MonthTxt (MonthNumber) {
+    var Month=new Array();
+    Month[1]="January";
+    Month[2]="February";
+    Month[3]="March";
+    Month[4]="April";
+    Month[5]="May";
+    Month[6]="June";
+    Month[7]="July";
+    Month[8]="August";
+    Month[9]="September";
+    Month[10]="October";
+    Month[11]="November";
+    Month[12]="December";
+    return Month[MonthNumber];
+    }
+    var MonthName=MonthTxt(ThisMonth);
+    var d = new Date();
+    var h = d.getHours();
+    // stop hiding -->
     </script>
-</body>
 
+
+  </head>
+  <body onLoad="MM_preloadImages('img/frntpage_r1_c01_f2.gif','img/frntpage_r3_c02_f3.gif','img/frntpage_r1_c02_f2.gif','img/frntpage_r1_c03_f2.gif','img/frntpage_r3_c02_f4.gif','img/frntpage_r1_c04_f2.gif','img/frntpage_r3_c02_f5.gif','img/frntpage_r1_c06_f2.gif','img/frntpage_r3_c02_f6.gif','img/frntpage_r1_c07_f2.gif','img/frntpage_r3_c02_f7.gif','img/frntpage_r1_c08_f2.gif','img/frntpage_r3_c02_f8.gif');">
+    <div class="main_container px-4 md:px-0">
+        <div class="wrapper max-w-[940px] mx-auto py-4">
+            <!-- Header Menu -->
+             <div class="header_menu">
+                <div class="flex flex-row gap-0 items-center justify-center">
+                    <a href="index.html" onMouseOut="MM_swapImgRestore();"  onMouseOver="MM_swapImage('frontpage_r1_c01','','img/frntpage_r1_c01_f2.gif','frontpage_r3_c02','','img/frntpage_r3_c02.gif',1);" ><img name="frontpage_r1_c01" src="img/frntpage_r1_c01.gif"></a>
+                    <a href="about.html" onMouseOut="MM_swapImgRestore();"  onMouseOver="MM_swapImage('frontpage_r3_c02','','img/frntpage_r3_c02_f3.gif','frontpage_r1_c02','','img/frntpage_r1_c02_f2.gif',1);" ><img name="frontpage_r1_c02" src="img/frntpage_r1_c02.gif" width="108" height="40"></a>
+                    <a href="rules.html" onMouseOut="MM_swapImgRestore();"  onMouseOver="MM_swapImage('frontpage_r1_c03','','img/frntpage_r1_c03_f2.gif','frontpage_r3_c02','','img/frntpage_r3_c02_f4.gif',1);" ><img name="frontpage_r1_c03" src="img/frntpage_r1_c03.gif" width="104" height="40"></a>
+                    <a href="reviews.html" onMouseOut="MM_swapImgRestore();"  onMouseOver="MM_swapImage('frontpage_r1_c04','','img/frntpage_r1_c04_f2.gif','frontpage_r3_c02','','img/frntpage_r3_c02_f5.gif',1);" ><img name="frontpage_r1_c04" src="img/frntpage_r1_c04.gif" width="136" height="40"></a>
+                    <a href="play.html" onMouseOut="MM_swapImgRestore();"  onMouseOver="MM_swapImage('frontpage_r1_c06','','img/frntpage_r1_c06_f2.gif','frontpage_r3_c02','','img/frntpage_r3_c02_f6.gif',1);" ><img name="frontpage_r1_c06" src="img/frntpage_r1_c06.gif" width="88" height="40"></a>
+                    <a href="license.html" onMouseOut="MM_swapImgRestore();"  onMouseOver="MM_swapImage('frontpage_r1_c07','','img/frntpage_r1_c07_f2.gif','frontpage_r3_c02','','img/frntpage_r3_c02_f7.gif',1);" ><img name="frontpage_r1_c07" src="img/frntpage_r1_c07.gif" width="132" height="40"></a>
+                    <a href="contact.html" onMouseOut="MM_swapImgRestore();"  onMouseOver="MM_swapImage('frontpage_r1_c08','','img/frntpage_r1_c08_f2.gif','frontpage_r3_c02','','img/frntpage_r3_c02_f8.gif',1);" ><img name="frontpage_r1_c08" src="img/frntpage_r1_c08.gif" width="146" height="40"></a>
+                </div>
+             </div>
+            <!--/ Header Menu -->
+            <div class="header_hover_text_change flex flex-row items-center justify-center">
+                <img name="frontpage_r3_c02" src="img/frntpage_r3_c02.gif" width="714" height="63">
+            </div>
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-12 md:col-span-3">
+                    <div class="home_image">
+                        <img src="home-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-span-12 md:col-span-8">
+                    <div class="current_date my-4">
+                        <script language="javascript">
+                            document.write("<p>" + MonthName + " " + ThisDate + ", " + ThisYear + " Only 32 sets ready for immediate shipment.<p>");
+                            </script>
+                    </div>
+                    <div class="content_text">
+                         <p class="pb-2">NANNON may be the most amazing gaming discovery of the 21st
+          century! It is an easy game to learn, but has the same feeling as Backgammon. Roll the die and move one
+          checker if you can. You can't land on yourself or adjacent opponents. If you don't have time for backgammon,
+          try Nannon: A whole game takes a minute or two, and a tournament takes 15 minutes! </p>
+                        <p class="pb-4">The game goes anywhere because it fits inside an Altoids tin! Great in a pub, cafe, classroom,
+            restaurant, etc!</p>
+                        <h2 class="font-bold text-3xl text-center">NOW ON SALE AT COST $5!!!</h2>
+
+                        <div class="form_button my-4 flex flex-row items-center justify-center">
+                            <form ACTION="https://www.paypal.com/cgi-bin/webscr" ENCTYPE="ENCTYPE=&quot;x-www-form-urlencoded&quot;"
+                            METHOD="POST">
+                            <p>
+                                <INPUT TYPE="hidden" NAME="cmd" VALUE="_cart">
+                                <INPUT TYPE="hidden" NAME="business" VALUE="sales@nannon.com">
+                                <INPUT TYPE="hidden" NAME="item_name" VALUE="Nannon Pocket set">
+                                <INPUT TYPE="hidden" NAME="amount" VALUE="4.99">
+                                <INPUT TYPE="hidden" NAME="currency_code" VALUE="USD">
+                                <INPUT TYPE="hidden" NAME="quantity" VALUE="1">
+                                <INPUT TYPE="hidden" NAME="shipping" VALUE="5.00">
+                                <INPUT TYPE="hidden" NAME="add" VALUE="1">
+                                <INPUT TYPE="hidden" NAME="shipping2" VALUE="2.00">
+                                <INPUT NAME="submit" class="bg-green-500 text-white px-4 py-2 cursor-pointer rounded-sm hover:bg-green-600 font-bold text-base" TYPE="submit" VALUE="Order a set! (US)">
+                            </P>
+                            </form>
+                        </div>
+                        
+                        <div class="content_text pb-8">
+                            <h2 class="font-bold mb-8">Start a Nannon club with your friends. Order a Six-Pack (for the price of 5) and sell or gift
+                                them to family, friends, or buddies from your favorite pub. They
+                                are shipped by Priority Mail in the US or international air mail.</h2>
+                            
+                            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
+                                <div class="six_pack_us border border-gray-300 pl-2">
+                                    <form TARGET="paypal" ACTION="https://www.paypal.com/cgi-bin/webscr" METHOD="POST"
+                                    ENCTYPE="x-www-form-urlencoded">
+                                    <INPUT TYPE="hidden" NAME="cmd" VALUE="_cart"> 
+                                    <INPUT TYPE="hidden" NAME="business"
+                                                VALUE="sales@nannon.com"> 
+                                    <INPUT TYPE="hidden" NAME="item_name" VALUE="Six Pack by US Priority">
+                                    <INPUT TYPE="hidden" NAME="amount" VALUE="24.95"> 
+                                    <INPUT TYPE="hidden" NAME="currency_code"
+                                                VALUE="USD">
+                                    <INPUT TYPE="hidden" NAME="shipping" VALUE="10.45">
+                                    <INPUT TYPE="hidden"
+                                                NAME="shipping2" VALUE="10.45">
+                                    <input 
+                                        type="text" 
+                                        name="quantity" 
+                                        value="1" 
+                                        class="w-16 px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        >
+                                    <b>SIX
+                                                PACK (US)</b>
+                                
+                                    <INPUT SRC="img/visamc.gif" NAME="submit" TYPE="image" WIDTH="39" HEIGHT="71"
+                                                    ALIGN="MIDDLE" BORDER="2" NATURALSIZEFLAG="0">
+                                    <INPUT TYPE="hidden" NAME="add" VALUE="1">
+                                    
+                                    </form>
+                                </div>
+                            
+                                <div class="six_pack_intl border border-gray-300 pl-2">
+                                    <form TARGET="paypal" ACTION="https://www.paypal.com/cgi-bin/webscr" METHOD="POST"
+                                        ENCTYPE="x-www-form-urlencoded">
+
+                                        <INPUT TYPE="hidden" NAME="cmd" VALUE="_cart"> 
+                                        <INPUT TYPE="hidden" NAME="business" VALUE="sales@nannon.com">
+                                        <INPUT TYPE="hidden" NAME="item_name" VALUE="Six Pack International First Class"> 
+                                        <INPUT TYPE="hidden"
+                                            NAME="amount" VALUE="24.95"> 
+                                        <INPUT TYPE="hidden" NAME="currency_code" VALUE="USD">
+                                        <INPUT TYPE="hidden"
+                                            NAME="shipping" VALUE="25">
+                                        <INPUT TYPE="hidden" NAME="shipping2" VALUE="25"> 
+                                        <input 
+                                        class="w-16 px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            type="text"
+                                            name="quantity" value="1">
+                                        <b>SIX PACK (INT'L)</b>
+                                        <INPUT SRC="img/visamc.gif" NAME="submit" TYPE="image" WIDTH="39" HEIGHT="71" ALIGN="MIDDLE"
+                                            BORDER="2" NATURALSIZEFLAG="0">
+                                        <INPUT TYPE="hidden" NAME="add" VALUE="1">
+                                        </P>
+
+
+                                    </form>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <div class="content_text pb-18">
+                            <h2 class="font-bold">We have a limited number of Nannon Tournament Boards, which are wood framed, cork board, with 2 inch Crisloid stones,
+  precision dice, a doubling cube, and a new 3d-printed fibsquared cube. These come with 2 sets of instructions to
+  prevent loss.</h2>
+                            <img class="my-3 w-full" src="img/bigboard.jpg">
+
+                            <div class="sold_out_button flex flex-row items-center justify-center">
+                                  <form ACTION="https://www.paypal.com/cgi-bin/webscr" ENCTYPE="ENCTYPE=&quot;x-www-form-urlencoded&quot;"
+                                    METHOD="POST">
+                                    <INPUT TYPE="hidden" NAME="cmd" VALUE="_cart">
+                                    <INPUT TYPE="hidden" NAME="business" VALUE="sales@nannon.com">
+                                    <INPUT TYPE="hidden" NAME="item_name" VALUE="Nannon Tournament set">
+                                    <INPUT TYPE="hidden" NAME="amount" VALUE="49.00">
+                                    <INPUT TYPE="hidden" NAME="currency_code" VALUE="USD">
+                                    <INPUT TYPE="hidden" NAME="quantity" VALUE="1">
+                                    <INPUT TYPE="hidden" NAME="shipping" VALUE="15.00">
+                                    <INPUT TYPE="hidden" NAME="add" VALUE="1">
+                                    <INPUT TYPE="hidden" NAME="shipping2" VALUE="10.00">
+                                    <input class="bg-green-500 text-white px-4 py-2 cursor-pointer rounded-sm hover:bg-green-600 font-bold text-base" name="submit" type="submit" value="SOLD OUT!">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
 </html>
